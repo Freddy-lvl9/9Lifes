@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LVL9 Life</title>
+  <link rel="stylesheet" href="Static\root.css">
+  <link rel="stylesheet" href="Static\9Lifes.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <img class="image-gradient" src="Media\images\gradient.png" alt="gradient">
+  <div class="layer-blur"></div>
+  <div class="container">
+    <header>
+      <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">LVL9 Life</h1>
+      <nav>
+        <a href="" data-aos="fade-down" data-aos-duration="1000">COMPANY</a>
+        <a href="" data-aos="fade-down" data-aos-duration="1500">FEATURES</a>
+        <a href="dashboard/" data-aos="fade-down" data-aos-duration="2000">DASHBOARD</a>
+        <a href="" data-aos="fade-down" data-aos-duration="2500">EXPLORE</a>
+      </nav>
+      <div>
+      <button class="btn-login" data-aos="fade-down" data-aos-duration="3000" onclick="window.location.href='login'">LOGIN</button>
+      <button class="btn-signing" data-aos="fade-down" data-aos-duration="3000" onclick="window.location.href='signup'">SIGNING</button></div>
+    </header>
+    <!-- Image: Auf großen Bildschirmen rechts positioniert, bei kleineren oben -->
+     <!--
+    <div class="image-wrapper" data-aos="fade-zoom-in" data-aos-easing="ease-in-back" data-aos-delay="1000" data-aos-duration="3000">
+        <img src="Media/images/LVL9_highquality.png" alt="Ring" class="image" />
+    </div>
+-->
+
+    <main>
+      <div class="content"><!--
+        <div  data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="300"
+          data-aos-offset="0"
+          data-aos-duration="1500"class="tag-box">--><!--
+          <div class="tag">
+            INTRUCING &wedbar;
+          </div>-->
+        </div>
+        <h1 class="h1"
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="125"
+          data-aos-offset="0"
+          data-aos-duration="300">
+        For Improvement
+      </h1>
+        <p class="description" data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0"
+        data-aos-duration="1000">
+          Use LVL9 and reach your goal with others while staying motivated
+        </p>
+        <div class="buttons">
+          <a href="#" class="btn-explore"
+          data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="1000"
+        data-aos-offset="0"
+        data-aos-duration="4000">Explore &gt;</a>
+          <a href="" class="btn-signing-main"
+          data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="1000"
+        data-aos-offset="0"
+        data-aos-duration="4000">Get started &gt;</a>
+        </div>
+      </div>
+    </main>
+  </div>
+<footer class="footer"></footer>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+  once: true // Die Animation bleibt einmalig bestehen
+});
+</script>
+
+
+
+ 
+ 
+<script>
+  AOS.init({ once: true });
+
+  // Dropdown-Navigation
+  const logo = document.querySelector('header .logo');
+  const nav = document.querySelector('header nav');
+
+  if (window.innerWidth < 768) {
+    nav.classList.add('nav-hidden');
+    logo.addEventListener('click', () => {
+      nav.classList.toggle('nav-visible');
+    });
+  }
+
+  // 💡 Login/Logout Buttons steuern (nur Cookie, kein localStorage)
+  const buttonContainer = document.querySelector("header > div");
+
+  // Prüfe Login-Status per API (Cookie wird automatisch gesendet)
+  fetch('/api/auth/me/', {
+    method: 'GET',
+    credentials: 'include'
+  })
+    .then(res => res.ok ? res.json() : null)
+    .then(data => {
+      if (data && data.username) {
+        // User ist eingeloggt → Logout anzeigen
+        buttonContainer.innerHTML = `
+          <button class="btn-signing" onclick="logout()">LOGOUT</button>
+        `;
+      } else {
+        // User ist nicht eingeloggt → Login & Signup anzeigen
+        buttonContainer.innerHTML = `
+          <button class="btn-login" onclick="window.location.href='login'">LOGIN</button>
+          <button class="btn-signing" onclick="window.location.href='signup'">SIGNING</button>
+        `;
+      }
+    });
+
+  function logout() {
+    fetch('/api/auth/logout/', {
+      method: 'POST',
+      credentials: 'include'
+    }).then(() => {
+      alert("👋 Erfolgreich ausgeloggt!");
+      window.location.href = "/";
+    });
+  }
+</script>
+  
+</body>
+</html>
