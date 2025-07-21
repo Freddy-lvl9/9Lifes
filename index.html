@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>9Lifes</title>
-  <link rel="stylesheet" href="Static/root.css?v=1">
-  <link rel="stylesheet" href="Static/9Lifes.css?v=1">
+  <link rel="stylesheet" href="assets/css/root.css?v=1">
+  <link rel="stylesheet" href="assets/css/9Lifes.css?v=1">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -18,11 +18,11 @@
         <a href="" data-aos="fade-down" data-aos-duration="1000">COMPANY</a>
         <a href="" data-aos="fade-down" data-aos-duration="1500">FEATURES</a>
         <a href="dashboard/" data-aos="fade-down" data-aos-duration="2000">DASHBOARD</a>
-        <a href="" data-aos="fade-down" data-aos-duration="2500">EXPLORE</a>
+        <a href="in_work/" data-aos="fade-down" data-aos-duration="2500">PROGRESS</a>
       </nav>
       <div>
-      <button class="btn-login" data-aos="fade-down" data-aos-duration="3000" onclick="window.location.href='login'">LOGIN</button>
-      <button class="btn-signing" data-aos="fade-down" data-aos-duration="3000" onclick="window.location.href='signup'">SIGNING</button></div>
+      <button class="btn-login" data-aos="fade-down" data-aos-duration="3000" onclick="window.location.href='in_work/'">LOGIN</button>
+      <button class="btn-signing" data-aos="fade-down" data-aos-duration="3000" onclick="window.location.href='in_work/'">SIGNING</button></div>
     </header>
     <!-- Image: Auf großen Bildschirmen rechts positioniert, bei kleineren oben -->
      <!--
@@ -100,39 +100,7 @@
     });
   }
 
-  // 💡 Login/Logout Buttons steuern (nur Cookie, kein localStorage)
-  const buttonContainer = document.querySelector("header > div");
 
-  // Prüfe Login-Status per API (Cookie wird automatisch gesendet)
-  fetch('/api/auth/me/', {
-    method: 'GET',
-    credentials: 'include'
-  })
-    .then(res => res.ok ? res.json() : null)
-    .then(data => {
-      if (data && data.username) {
-        // User ist eingeloggt → Logout anzeigen
-        buttonContainer.innerHTML = `
-          <button class="btn-signing" onclick="logout()">LOGOUT</button>
-        `;
-      } else {
-        // User ist nicht eingeloggt → Login & Signup anzeigen
-        buttonContainer.innerHTML = `
-          <button class="btn-login" onclick="window.location.href='login'">LOGIN</button>
-          <button class="btn-signing" onclick="window.location.href='signup'">SIGNING</button>
-        `;
-      }
-    });
-
-  function logout() {
-    fetch('/api/auth/logout/', {
-      method: 'POST',
-      credentials: 'include'
-    }).then(() => {
-      alert("👋 Erfolgreich ausgeloggt!");
-      window.location.href = "/";
-    });
-  }
 </script>
   
 </body>
