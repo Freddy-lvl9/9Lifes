@@ -13,7 +13,7 @@
   <div class="layer-blur"></div>
   <div class="container">
     <header>
-      <h1 data-aos="fade-down" data-aos-duration="1500" class="logo" onclick="window.location.href=''">9Lifes</h1>
+      <h1 data-aos="fade-down" data-aos-duration="1500" class="logo" >9Lifes</h1>
       <nav>
         <a href="company/" data-aos="fade-down" data-aos-duration="1000">COMPANY</a>
         <a href="features/" data-aos="fade-down" data-aos-duration="1500">FEATURES</a>       
@@ -29,7 +29,7 @@
   <div style="text-align: center;">
     <h1 class="h1inwork">In Progress</h1>
     <p class="pinwork">We are currently working on this Website</p>
-    <div class="tooltip-container" onclick="window.location.href='https://discord.gg/'"> <!-- funktioniert obwohl rot; Tooltip for Discord link -->
+    <div class="tooltip-container" onclick="window.location.href='https://discord.gg/dnXMrmc7'"> <!-- funktioniert obwohl rot; Tooltip for Discord link -->
       <span class="tooltip">Discover</span>
       <span class="text">
         <div class="borde-back">
@@ -53,22 +53,8 @@
   </div>
 
 </main>
- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
- 
-<script>
-  AOS.init({ once: true });
 
-  // Dropdown-Navigation
-  const logo = document.querySelector('header .logo');
-  const nav = document.querySelector('header nav');
-
-  if (window.innerWidth < 768) {
-    nav.classList.add('nav-hidden');
-    logo.addEventListener('click', () => {
-      nav.classList.toggle('nav-visible');
-    });
-  }
-
-</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+<script src="assets/js/root.js"></script>
 </body>
 </html>
