@@ -139,7 +139,7 @@ nav.nav-visible a:last-child {
     padding: 1rem;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 970px) {
   nav.nav-visible {
     position: absolute;
     top: 6rem; /* Höhe deines Headers, ggf. anpassen */

@@ -7,7 +7,7 @@ let navVisible = false;
 let logoClickable = false; // false = show dropdown, true = go to link
 
 function updateNav() {
-  if (window.innerWidth <900) {
+  if (window.innerWidth <970) {
     nav.classList.add('nav-hidden');
     logo.onclick = () => {
       if (!navVisible) {
