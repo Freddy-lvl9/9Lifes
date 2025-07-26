@@ -1,0 +1,24 @@
+.h11 {
+  text-align: center;
+  font-size: 4.5rem;
+  color: var(--primary-color);
+  margin-top: 20px;
+  position: relative;
+  display: inline-block; /* Wichtig für die Breite des ::after */
+}
+
+.h11::after {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Abstand unter dem Text */
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--primary-color);
+}
+.pinwork {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #a7a7a7;
+  margin-top: 20px;
+}
