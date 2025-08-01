@@ -1,12 +1,19 @@
 .progress-section {
-  margin: 4rem auto 2rem auto;
-  max-width: 500px;
-  text-align: center;
+  margin: 4rem 1rem 2rem 1rem;
+  text-align: center; 
+  margin-top: 2rem;
+}
+.modern-card {
+  background: rgba(30, 20, 10, 0.45);
+  border-radius: 18px;
+  box-shadow: 0 2px 24px 0 rgba(206,155,89,0.13);
+  backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(206,155,89,0.18);
+  margin-top: 2rem;
 }
 .progress-list {
   list-style: none;
   padding: 0;
-  margin-top: 2.5rem;
 }
 .progress-list li {
   display: flex;
@@ -60,4 +67,17 @@
   vertical-align: middle;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+@media (max-width: 550px) {
+  .modern-card  {
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .progress-list{
+        display: inline-block;
+        width: calc(
+          auto * 0.1
+        );
+  }
 }
