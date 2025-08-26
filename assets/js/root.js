@@ -19,7 +19,7 @@ function updateNav() {
         logoClickable = true;
       } else {
         // Follow link
-        window.location.href = '';
+        window.location.href = '/';
       }
     };
   } else {
@@ -35,7 +35,8 @@ function addHideOption() {
     const hide = document.createElement('a');
     hide.classList.add('hide-link');
     hide.textContent = 'Hide';
-    hide.style.padding = '1rem';
+    hide.style.padding = '0.5rem';
+    hide.style.fontSize = '1.5rem';
     hide.style.cursor = 'pointer';
     hide.onclick = () => {
       nav.classList.remove('nav-visible');
