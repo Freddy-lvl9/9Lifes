@@ -96,6 +96,7 @@ nav.nav-visible {
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
+  z-index: 1000000;
 }
 
 nav.nav-visible a {
