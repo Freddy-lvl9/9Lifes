@@ -189,7 +189,7 @@ main {
 }
 
 .footer{
-  justify-content: center;
+  text-align: center;
 }
 
 @media (max-width: 480px) {
