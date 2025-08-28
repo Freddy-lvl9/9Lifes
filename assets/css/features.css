@@ -9,7 +9,7 @@
 
 .feature-list li {
   margin-bottom: 1.2rem;
-  background: rgba(206, 155, 89, 0.08);
+
   border-left: 4px solid var(--primary-color);
   padding: 0.7rem 1.2rem;
   border-radius: 0 18px 18px 0;
